@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "SSL/Mailgun Test";
+}
+
+<p>
+    This form will perform a POST to Mailgun to send a mail with subject "Hello" and
+    message body "Testing some Mailgun awesomeness!".
+</p>
+<p>
+    The result of the call will be rendered after submitting the form.
+</p>
+<form method="post">
+    <label for="apikey">API Key:</label>
+    <input type="text" name="apikey" />
+
+    <label for="to">To:</label>
+    <input type="text" name="to" />
+
+    <input type="submit" value="Submit" />
+</form>
+<div>
+    <h2>Content</h2>
+    @Request.QueryString["Content"]
+</div>
+<div>
+    <h2>StatusCode</h2>
+    @Request.QueryString["StatusCode"]
+</div>
+<div>
+    <h2>Exception</h2>
+    @Request.QueryString["Exception"]
+</div>
+<div>
+    <h2>ErrorMessage</h2>
+    @Request.QueryString["ErrorMessage"]
+</div>
